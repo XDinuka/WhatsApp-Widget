@@ -1,0 +1,121 @@
+$length-unit: 1rem;
+$color-1: #128c7e;
+$color-2: #ece5dd;
+$color-3: #ffffff;
+$color-4: #25d366;
+
+div.whatsapp-widget {
+  font-family: Arial, Helvetica, sans-serif;
+  div.toggle {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: $color-3;
+    padding: $length-unit * 0.2;
+    box-shadow: 0 0 $length-unit $length-unit * 0.2
+      rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: $length-unit * 2;
+    width: $length-unit * 2;
+    bottom: $length-unit * 3;
+    right: $length-unit * 2;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+    div {
+      height: 70%;
+      width: 70%;
+      background: url("WALogo.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  div.chat {
+    display: none;
+    &.show {
+      display: block;
+      position: absolute;
+      border-radius: $length-unit;
+      background-color: $color-2;
+      height: $length-unit * 25;
+      max-height: 70vh;
+      width: $length-unit * 15;
+      max-width: 70vw;
+      bottom: $length-unit * 6;
+      right: $length-unit * 2;
+      transition: all 0.1s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-shadow: 0 0 $length-unit $length-unit * 0.2
+        rgba($color: #000000, $alpha: 0.5);
+      cursor: pointer;
+      &.pop {
+        transform: scale(1.05);
+      }
+      .chatheader {
+        background-color: $color-1;
+        border-radius: $length-unit $length-unit 0 0;
+        height: $length-unit * 3;
+        flex-grow: 0;
+        display: flex;
+        align-items: center;
+        color: white;
+        .chatavatar {
+          margin: $length-unit * 0.5;
+          width: $length-unit * 2;
+          height: $length-unit * 2;
+          background-color: $color-3;
+          background-size: contain;
+          background-repeat: no-repeat;
+          border-radius: 50%;
+        }
+      }
+      .chatbody {
+        flex-grow: 1;
+        .chatmessage {
+          display: inline-block;
+          background-color: $color-3;
+          margin: $length-unit;
+          padding: $length-unit * 0.4 $length-unit * 0.7;
+          border-radius: 0 $length-unit * 0.5 $length-unit * 0.5 $length-unit *
+            0.5;
+          &::before {
+            content: " ";
+            position: absolute;
+            background-color: $color-3;
+            height: $length-unit * 0.7;
+            width: $length-unit;
+            left: $length-unit * 0.5;
+            top: $length-unit * 4;
+            border-bottom-left-radius: $length-unit;
+          }
+        }
+      }
+      .chatfooter {
+        height: $length-unit * 3.5;
+        flex-grow: 0;
+        display: grid;
+        grid-template-columns: 1fr $length-unit * 2.5;
+        column-gap: $length-unit;
+        padding-left: $length-unit;
+        padding-right: $length-unit;
+        .chatmessagebox {
+          background-color: $color-3;
+          height: $length-unit * 2.5;
+          border-radius: $length-unit * 0.5;
+        }
+        .chatmessagesend {
+          background-color: $color-4;
+          height: $length-unit * 2.5;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}
