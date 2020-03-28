@@ -6,6 +6,10 @@ This element will open a whatsapp convaersation to the provided phone number.
 ## Usage
 
 * Include whatsapp-widge js and css file.
+* Add an empty div with class whatsapp-widget to the page.
+```
+<div class="whatsapp-widget"></div>
+```
 * Initialize the component as shown in the example below.
 
 ```
